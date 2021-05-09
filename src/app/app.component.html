@@ -1,0 +1,33 @@
+<div class="container pt-2">
+  <h1>Datatable Actions</h1>
+
+  <ngx-datatable
+    class="material"
+    [rows]="films"
+    rowHeight="auto"
+    headerHeight="auto"
+    footerHeight="auto"
+    limit="7"
+    columnMode="force">
+    <ngx-datatable-column name="Title">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        {{value.originalTitle}}
+      </ng-template>
+    </ngx-datatable-column>
+     <ngx-datatable-column name="Country">
+       <ng-template let-value="value" ngx-datatable-cell-template>
+         {{value}}
+       </ng-template>
+     </ngx-datatable-column>
+     <ngx-datatable-column name="Duration">
+       <ng-template let-value="value" ngx-datatable-cell-template>
+         {{value | durationToHMm}}
+       </ng-template>
+     </ngx-datatable-column>
+    <ngx-datatable-column name="Action">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <i class="fas fa-trash fa-fw"></i>
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
